@@ -2,6 +2,9 @@
 
 -compile(export_all).
 
+test() ->
+    "hola mundo".
+
 hello() ->
     io:fwrite("Hello Joe how are you?~n").
 
