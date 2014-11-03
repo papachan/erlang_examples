@@ -1,6 +1,6 @@
 -module(what_the_if).
 
--export([heh_fine/0]).
+-export([heh_fine/0, oh_god/1, help_me/1]).
 
 
 heh_fine() ->
@@ -16,3 +16,22 @@ heh_fine() ->
 	    fails
     end.
 
+oh_god(N) ->
+    if N =:= 2 ->
+	    might_succeed;
+       true -> always_does
+    end.
+
+
+help_me(Animal) ->
+    Talk = if Animal == cat ->
+		   "Meow";
+	      Animal == beef ->
+		   "mooo";
+	      Animal == dog ->
+		   "bark";
+	      Animal == tree ->
+		   "bark";
+	      true -> "fgdadgfna"
+	   end,
+    {Animal, "says " ++ Talk ++ "!"}.
