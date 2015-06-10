@@ -1,9 +1,6 @@
 -module(personRecord).
 
--export([
-    lookup/0,
-    demo/0
-    ]).
+-compile(export_all).
 
 -include("person.hrl").
 
@@ -30,9 +27,9 @@ update_record(Record) ->
                     address = "5th Avenue"
                 }.  
 
-print_record(#person{name=Name, phone=phone, address=AddressRecord}) -> 
+print_record(#person{name=Name, phone=Phone, address=Address}) -> 
                     io:format("Name: ~p phone: ~p Address: ~p ~n", 
-                              [Name, phone, AddressRecord]).
+                              [Name, Phone, Address]).
 
 
 print_record1(Record) when is_record(Record, person) -> 
