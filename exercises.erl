@@ -2,9 +2,8 @@
 
 -export([sum/1]).
 
-%sum(N) when N > 0 ->
-%    N;
-%sum(0) -> 0.
+% Write a function sum/1 which, given a positive integer N, 
+% will return the sum of all the integers between 1 and N.
 
 sum(Boundary) ->
     sum_acc(1,Boundary,0).
