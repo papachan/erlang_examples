@@ -1,4 +1,4 @@
--module(exercises2).
+-module(exercises).
 
 -export([
        create/1, 
