@@ -8,9 +8,12 @@
 parse(L) -> mylist_acc(L).
 
 
-
-mylist_acc(L) ->
-    L.
+% parse recursively our list
+mylist_acc([]) -> 
+    ok;
+mylist_acc([H|T]) -> 
+    io:format("~p", [H]), 
+    mylist_acc(T).
 
 
 start() ->
