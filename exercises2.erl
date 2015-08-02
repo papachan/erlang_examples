@@ -12,8 +12,7 @@ parse(L) -> mylist_acc(L).
 mylist_acc([]) -> 
     ok;
 mylist_acc([H|T]) -> 
-    P = hd(H),
-    io:format("~s", [[P+1]]), 
+    io:format("~s", [[hd(H)+1]]), 
     mylist_acc(T).
 
 
