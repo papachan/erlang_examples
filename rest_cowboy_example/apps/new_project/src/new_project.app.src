@@ -1,0 +1,16 @@
+{application, new_project,
+ [{description, "A cowboy 2.0 example"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {mod, { new_project_app, []}},
+  {applications,
+   [kernel,
+    stdlib,
+    cowboy
+   ]},
+  {env,[{http_port, 8081}]},
+  {modules, []},
+  {maintainers, []},
+  {licenses, ["Apache 2.0"]},
+  {links, []}
+ ]}.
