@@ -15,6 +15,7 @@
 %%====================================================================
 
 start(_StartType, _StartArgs) ->
+    {ok, Port} = application:get_env(http_port),
     {ok, Pid} = new_project_sup:start_link(),
     Routes = [ {
         '_',
@@ -24,7 +25,7 @@ start(_StartType, _StartArgs) ->
     } ],
     Dispatch = cowboy_router:compile(Routes),
 
-    TransOpts = [ {ip, {0,0,0,0}}, {port, 8081} ],
+    TransOpts = [ {ip, {0,0,0,0}}, {port, Port} ],
     ProtoOpts = #{env => #{dispatch => Dispatch}},
 
     {ok, _} = cowboy:start_clear(oh_my_cowboy, TransOpts, ProtoOpts),
